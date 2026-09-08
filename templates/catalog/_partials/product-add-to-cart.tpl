@@ -21,8 +21,9 @@
             {assign 'availability_icon' 'E002'}
             {assign 'availability_class' 'text-warning'}
           {elseif $product.availability == 'last_remaining_items'}
+            {** In stock, only not much of it: green like in_stock, with the alert icon kept *}
             {assign 'availability_icon' 'E002'}
-            {assign 'availability_class' 'text-warning'}
+            {assign 'availability_class' 'text-success'}
           {else}
             {assign 'availability_icon' 'E14B'}
             {assign 'availability_class' 'text-danger'}
