@@ -3,7 +3,8 @@
  * LICENSE.md file that was distributed with this source code.
  *}
 {* Stock label of a product, with the icon and the colour of its availability state.
-   The caller passes its own BEM block as $componentName, and optionally a $dataPsRef. *}
+   The caller passes its own BEM block as $componentName, and optionally a $dataPsRef, and
+   $showSubmessage=false to leave the availability submessage out. *}
 {if !empty($product.availability_message)}
   {** First, we prepare the icons and colors we want to use *}
   {if $product.availability == 'in_stock'}
@@ -28,7 +29,7 @@
       <span class="visually-hidden">{l s='Product availability:' d='Shop.Theme.Global'}</span>
       <span>{$product.availability_message}</span>
 
-      {if !empty($product.availability_submessage)}
+      {if !empty($product.availability_submessage) && (!isset($showSubmessage) || $showSubmessage)}
         <small class="d-block">{$product.availability_submessage}</small>
       {/if}
     </div>

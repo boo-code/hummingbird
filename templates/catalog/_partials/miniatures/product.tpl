@@ -73,6 +73,7 @@
               {include file='catalog/_partials/product-availability-status.tpl'
                 product=$product
                 componentName=$componentName
+                showSubmessage=false
               }
             {/block}
 
